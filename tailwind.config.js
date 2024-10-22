@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./*.{js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nagarik: ["Nagarik"],
+        kokila: ["Kokila"],
+      },
+    },
   },
   plugins: [],
 };
