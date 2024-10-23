@@ -6,10 +6,14 @@
   @font-face {
     font-family: "Nagarik";
     font-style: normal;
-    src: url("./public/assets/Nagarik.ttf") format("truetype");
+    src: url("./assets/Nagarik.ttf") format("truetype");
 
     font-family: "Kokila";
     font-style: normal;
-    src: url("./public/assets/kokila.ttf") format("truetype");
+    src: url("./assets/kokila.ttf") format("truetype");
   }
+}
+
+[x-cloak] {
+  display: none !important;
 }

@@ -2,19 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="./assets/favicon-huesarrays.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Preeti to Unicode Nepali</title>
+    <title>Preeti to Unicode Nepali by Rajesh Budhathoki</title>
   </head>
-  <body>
+  <body class="max-w-7xl mx-auto">
     <h1 class="my-8 text-center text-3xl font-medium tracking-tight">
       Preeti to Unicode Nepali Converter
     </h1>
-    <section class="space-y-8 p-4">
+    <section
+      x-data="{
+      showAlert: false,
+      copyText() {
+        const text = document.getElementById('unicodeOutput').value;
+        if (text) {
+          navigator.clipboard.writeText(text).then(() => {
+            // Show the alert
+            this.showAlert = true;
+            // Hide the alert after 5 seconds
+            setTimeout(() => {
+              this.showAlert = false;
+            }, 5000);
+          });
+        }
+      }
+    }"
+      class="space-y-8 p-4"
+    >
+      <!-- Alert Message (Initially Hidden) -->
+      <div
+        x-show="showAlert"
+        x-transition.opacity
+        x-cloak
+        class="mx-auto mb-8 max-w-xs rounded-xl bg-lime-500 text-sm text-white shadow-lg"
+        role="alert"
+      >
+        <div class="flex p-4">Copied to clipboard! 👍</div>
+      </div>
+
       <div class="relative rounded-lg border-2">
         <textarea
           id="preetiInput"
-          class="block min-h-96 w-full resize-y tracking-normal leading-normal rounded-lg border-gray-200 p-4 pb-12 text-lg focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 font-nagarik"
+          class="block min-h-72 w-full resize-y tracking-normal leading-normal rounded-lg border-gray-200 p-4 pb-12 text-2xl focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 font-nagarik"
           placeholder='gofF k|Llt jf gful/s kmG6df n]Vg"xf];\ .'
         ></textarea>
       </div>
@@ -23,7 +52,7 @@
       <div class="relative rounded-lg border-2">
         <textarea
           id="unicodeOutput"
-          class="block min-h-96 font-kokila w-full resize-y leading-tight rounded-lg border-gray-200 p-4 pb-12 text-lg focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50"
+          class="block min-h-72 font-kokila w-full resize-y leading-tight rounded-lg border-gray-200 p-4 pb-12 text-2xl focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50"
           placeholder="यहाँ यूनिकोड नेपालीमा रुपान्तरण हुनेछ ।"
           readonly
         ></textarea>
@@ -40,7 +69,6 @@
                 class="inline-flex size-8 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white hover:bg-blue-500 focus:z-10 focus:bg-blue-500 focus:outline-none"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
@@ -62,9 +90,9 @@
         <!-- End Toolbar -->
       </div>
     </section>
-    <footer class="text-center mt-8 bg-slate-600 p-2 text-white">
+    <footer class="text-center mt-8 bg-slate-600 p-2 text-slate-300">
       Developed by
-      <a href="https://www.brajesh.com.np/">Rajesh Budhathoki</a>
+      <a href="https://huesarrays.com" class="hover:underline text-white">Rajesh Budhathoki</a>
     </footer>
     <script type="module" src="/main.js"></script>
   </body>

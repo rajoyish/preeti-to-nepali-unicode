@@ -2,6 +2,12 @@ import "./style.css";
 
 import { convertToUnicode } from "./converter";
 
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
+
+Alpine.start();
+
 // This function is triggered every time the user types
 function handleInputChange() {
   const preetiInput = document.getElementById("preetiInput").value;
