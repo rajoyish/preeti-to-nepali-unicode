@@ -13,6 +13,9 @@
     <section
       x-data="{
       showAlert: false,
+
+      preetiInput: localStorage.getItem('preetiInput') || '',
+
       copyText() {
         const text = document.getElementById('unicodeOutput').value;
         if (text) {
@@ -25,9 +28,13 @@
             }, 5000);
           });
         }
+      },
+      
+      saveInput() {
+        localStorage.setItem('preetiInput', this.preetiInput);
       }
     }"
-      class="space-y-8 p-4"
+      class="space-y-8 p-4 md:p-8"
     >
       <!-- Alert Message (Initially Hidden) -->
       <div
@@ -43,6 +50,8 @@
       <div class="relative rounded-lg border-2">
         <textarea
           id="preetiInput"
+          x-model="preetiInput"
+          x-on:input="saveInput()"
           class="block min-h-72 w-full resize-y tracking-normal leading-normal rounded-lg border-gray-200 p-4 pb-12 text-2xl focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 font-nagarik"
           placeholder='gofF k|Llt jf gful/s kmG6df n]Vg"xf];\ .'
         ></textarea>
@@ -89,11 +98,13 @@
         </div>
         <!-- End Toolbar -->
       </div>
+      <footer class="text-center mt-8 bg-slate-600 p-2 text-slate-300">
+        Developed by
+        <a href="https://huesarrays.com" class="hover:underline text-white"
+          >Rajesh Budhathoki</a
+        >
+      </footer>
     </section>
-    <footer class="text-center mt-8 bg-slate-600 p-2 text-slate-300">
-      Developed by
-      <a href="https://huesarrays.com" class="hover:underline text-white">Rajesh Budhathoki</a>
-    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
