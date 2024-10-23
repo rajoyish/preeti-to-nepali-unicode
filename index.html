@@ -13,30 +13,53 @@
     <section
       x-data="{
       showAlert: false,
-
       preetiInput: localStorage.getItem('preetiInput') || '',
-
+      cursorPosition: 0, // To track cursor position
+  
+      // Copy text logic
       copyText() {
         const text = document.getElementById('unicodeOutput').value;
         if (text) {
           navigator.clipboard.writeText(text).then(() => {
-            // Show the alert
             this.showAlert = true;
-            // Hide the alert after 5 seconds
             setTimeout(() => {
               this.showAlert = false;
             }, 5000);
           });
         }
       },
-
+  
+      // Save text to localStorage
       saveInput() {
         localStorage.setItem('preetiInput', this.preetiInput);
+      },
+  
+      // Track cursor position in the textarea
+      setCursorPosition(event) {
+        this.cursorPosition = event.target.selectionStart;
+      },
+  
+      // Insert dynamic text at cursor position
+      insertTextFromButton(event) {
+        const text = event.target.innerText;
+        const textarea = document.getElementById('preetiInput');
+        const before = this.preetiInput.substring(0, this.cursorPosition);
+        const after = this.preetiInput.substring(this.cursorPosition);
+        this.preetiInput = before + text + after;
+  
+        // Update cursor position after inserting the text
+        this.cursorPosition += text.length;
+  
+        // Refocus and set the cursor position
+        textarea.focus();
+        textarea.setSelectionRange(this.cursorPosition, this.cursorPosition);
+  
+        // Save the updated input
+        this.saveInput();
       }
     }"
       class="space-y-8 p-4 md:p-8"
     >
-      <!-- Alert Message (Initially Hidden) -->
       <div
         x-show="showAlert"
         x-transition.opacity
@@ -47,11 +70,14 @@
         <div class="flex p-4">Copied to clipboard! 👍</div>
       </div>
 
+      <!-- Textarea -->
       <div class="relative rounded-lg border-2">
         <textarea
           id="preetiInput"
           x-model="preetiInput"
           x-on:input="saveInput()"
+          x-on:click="setCursorPosition($event)"
+          x-on:keyup="setCursorPosition($event)"
           class="block min-h-72 w-full resize-y tracking-normal leading-normal rounded-lg border-gray-200 p-4 pb-12 text-2xl focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50 font-nagarik"
           placeholder='gofF k|Llt jf gful/s kmG6df n]Vg"xf];\ .'
           spellcheck="false"
@@ -59,6 +85,47 @@
           autocorrect="off"
           autocapitalize="off"
         ></textarea>
+      </div>
+
+      <!-- Buttons to insert text dynamically -->
+      <div class="inline-flex rounded-lg shadow-sm">
+        <button
+          x-on:click="insertTextFromButton($event)"
+          type="button"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ङ
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ॐ
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          क्ष
+        </button>
+        <!-- Copy below to add more characters -->
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ज्ञ
+        </button>
+        <!-- Copy below to add more characters -->
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          त्त्
+        </button>
       </div>
 
       <!-- Devanagari -->
@@ -73,9 +140,7 @@
         <!-- Toolbar -->
         <div class="absolute inset-x-px bottom-px rounded-b-md bg-white p-2">
           <div class="flex items-center justify-between">
-            <!-- Button Group -->
             <div class="flex items-center gap-x-1">
-              <!-- Clipboard Button -->
               <button
                 x-on:click="copyText"
                 type="button"
@@ -95,13 +160,11 @@
                   />
                 </svg>
               </button>
-              <!-- End Clipboard Button -->
             </div>
-            <!-- End Button Group -->
           </div>
         </div>
-        <!-- End Toolbar -->
       </div>
+
       <footer class="text-center mt-8 bg-slate-600 p-2 text-slate-300">
         Developed by
         <a href="https://huesarrays.com" class="hover:underline text-white"
@@ -109,6 +172,7 @@
         >
       </footer>
     </section>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
