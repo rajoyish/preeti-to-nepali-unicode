@@ -64,7 +64,7 @@
         x-show="showAlert"
         x-transition.opacity
         x-cloak
-        class="mx-auto mb-8 max-w-xs rounded-xl bg-lime-500 text-sm text-white shadow-lg"
+        class="mx-auto mb-8 max-w-xs rounded-xl bg-lime-500 text-2xl text-white shadow-lg"
         role="alert"
       >
         <div class="flex p-4">Copied to clipboard! 👍</div>
@@ -88,25 +88,18 @@
       </div>
 
       <!-- Buttons to insert text dynamically -->
-      <div class="inline-flex rounded-lg shadow-sm">
+      <div class="inline-flex rounded-lg shadow-sm font-kokila">
         <button
           x-on:click="insertTextFromButton($event)"
           type="button"
-          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
         >
           ङ
         </button>
         <button
           type="button"
           x-on:click="insertTextFromButton($event)"
-          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-        >
-          ॐ
-        </button>
-        <button
-          type="button"
-          x-on:click="insertTextFromButton($event)"
-          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
         >
           क्ष
         </button>
@@ -114,24 +107,101 @@
         <button
           type="button"
           x-on:click="insertTextFromButton($event)"
-          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
         >
-          र्‍
+          फ्
         </button>
         <button
           type="button"
           x-on:click="insertTextFromButton($event)"
-          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
         >
-          र्‍य
+          झ्
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          घ्
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ऱ्
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          –
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          —
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ‘ ’
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          “ ”
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ईं
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ौँ
         </button>
         <!-- Copy below to add more characters -->
         <button
           type="button"
           x-on:click="insertTextFromButton($event)"
-          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
         >
           त्त्
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ऽ
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ॐ
+        </button>
+        <button
+          type="button"
+          x-on:click="insertTextFromButton($event)"
+          class="-ms-px inline-flex items-center gap-x-2 border border-gray-200 bg-white px-4 py-3 text-2xl font-medium text-gray-800 shadow-sm first:ms-0 first:rounded-s-lg last:rounded-e-lg hover:bg-gray-50 focus:z-10 focus:bg-gray-50 focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+        >
+          ॥
         </button>
       </div>
 
