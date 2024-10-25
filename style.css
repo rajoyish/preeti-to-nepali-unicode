@@ -2,16 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @font-face {
-    font-family: "Nagarik";
-    font-style: normal;
-    src: url("./assets/Nagarik.ttf") format("truetype");
+@font-face {
+  font-family: "Nagarik";
+  src: url(/assets/Nagarik.ttf) format("truetype");
+}
 
-    font-family: "Kokila";
-    font-style: normal;
-    src: url("./assets/kokila.ttf") format("truetype");
-  }
+@font-face {
+  font-family: "Kokila";
+  src: url(/assets/kokila.ttf) format("truetype");
 }
 
 [x-cloak] {
